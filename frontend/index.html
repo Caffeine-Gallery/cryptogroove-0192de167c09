@@ -3,32 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Blog - Disco Edition</title>
+    <title>Crypto Blog - Hacker Terminal</title>
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <link href="index.css" rel="stylesheet">
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
-    <header>
-        <h1>Crypto Blog <span class="disco">Disco Edition</span></h1>
-    </header>
-    <main>
-        <button id="newPostBtn" class="btn">
-            <i data-feather="plus-circle"></i> New Post
-        </button>
-        <div id="postForm" class="hidden">
-            <input type="text" id="postTitle" placeholder="Enter post title">
-            <div id="editor"></div>
-            <input type="text" id="postAuthor" placeholder="Enter your name">
-            <button id="submitPost" class="btn">
-                <i data-feather="send"></i> Submit Post
-            </button>
+    <div class="terminal">
+        <header>
+            <h1>> Crypto_Blog.exe</h1>
+        </header>
+        <main>
+            <div class="command-line">
+                <span class="prompt">$</span>
+                <button id="newPostBtn" class="btn">new_post</button>
+            </div>
+            <div id="postForm" class="hidden">
+                <div class="command-line">
+                    <span class="prompt">title></span>
+                    <input type="text" id="postTitle" placeholder="Enter post title">
+                </div>
+                <div id="editor"></div>
+                <div class="command-line">
+                    <span class="prompt">author></span>
+                    <input type="text" id="postAuthor" placeholder="Enter your name">
+                </div>
+                <div class="command-line">
+                    <span class="prompt">$</span>
+                    <button id="submitPost" class="btn">submit_post</button>
+                </div>
+            </div>
+            <div id="posts"></div>
+        </main>
+        <div id="loadingSpinner" class="hidden">
+            <span class="blink">Processing...</span>
         </div>
-        <div id="posts"></div>
-    </main>
-    <div id="loadingSpinner" class="hidden">
-        <i data-feather="loader"></i>
     </div>
     <script type="module" src="index.js"></script>
 </body>

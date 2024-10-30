@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   feather.replace();
 
   quill = new Quill('#editor', {
-    theme: 'snow'
+    theme: 'snow',
+    placeholder: 'Enter your post content...'
   });
 
   const newPostBtn = document.getElementById('newPostBtn');
@@ -50,9 +51,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         const postElement = document.createElement('article');
         postElement.classList.add('post');
         postElement.innerHTML = `
-          <h2>${post.title}</h2>
+          <h2>> ${post.title}</h2>
           <div class="post-content">${post.body}</div>
-          <p class="post-meta">By ${post.author} on ${new Date(Number(post.timestamp) / 1000000).toLocaleString()}</p>
+          <p class="post-meta">Author: ${post.author} | Timestamp: ${new Date(Number(post.timestamp) / 1000000).toLocaleString()}</p>
         `;
         postsContainer.appendChild(postElement);
       });
